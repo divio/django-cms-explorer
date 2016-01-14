@@ -1,0 +1,84 @@
+// #############################################################################
+// TIMELINE
+
+// adds timeline styles for /about/
+
+$timeline-image-size: 190px;
+
+.list-timeline {
+    position: relative;
+    margin: 0 0 $line-height-computed;
+    h3 {
+        line-height: 1.3;
+    }
+
+    // tablet and up
+    @media (min-width: $screen-sm-min) {
+        // create middle line
+        &:after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: 1;
+            height: 100%;
+            border-left: 1px solid $gray-light;
+        }
+    }
+
+    .list-item {
+        position: relative;
+        min-height: 250px;
+        text-align: center;
+        // tablet and up
+        @media (min-width: $screen-sm-min) {
+            width: 50%;
+        }
+    }
+
+    // tablet and up
+    @media (min-width: $screen-sm-min) {
+        // list alternation
+        .list-item:nth-child(even) {
+            text-align: left;
+            position: relative;
+            left: 50%;
+            padding-left: $timeline-image-size / 2 + $line-height-computed * 2;
+            img {
+                left: 0;
+            }
+        }
+        .list-item:nth-child(odd) {
+            text-align: right;
+            padding-right: $timeline-image-size / 2 + $line-height-computed * 2;
+            img {
+                right: -$timeline-image-size / 2;
+            }
+        }
+        .list-item:last-child:after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            height: 100%;
+            border-left: 1px solid white;
+        }
+    }
+
+    img {
+        border-radius: 50%;
+        width: $timeline-image-size;
+        height: $timeline-image-size;
+        margin: 0 auto;
+        border: 6px solid $gray-light;
+        // tablet and up
+        @media (min-width: $screen-sm-min) {
+            position: absolute;
+            top: 0;
+            z-index: 10;
+            margin-left: -$timeline-image-size / 2;
+        }
+    }
+
+}

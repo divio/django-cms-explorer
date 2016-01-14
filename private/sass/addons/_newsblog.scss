@@ -1,0 +1,387 @@
+// #############################################################################
+// BLOG
+
+// adds blog style for /blog/
+
+.aldryn-newsblog {
+    font-family: $font-family-serif;
+    font-weight: 300;
+    margin-bottom: $line-height-computed;
+
+    // category on top of title
+    .category {
+        @extend .text-uppercase;
+        font-size: 80%;
+        font-weight: bold;
+        margin-bottom: $line-height-computed / 2;
+        a {
+            color: $text-color;
+        }
+    }
+
+    // article content
+    article {
+        padding-bottom: $line-height-computed;
+        h2 {
+            font-weight: 400;
+            a {
+                text-decoration: none;
+            }
+        }
+        .lead {
+            font-size: 115%;
+            font-weight: 300;
+            margin-bottom: $line-height-computed / 2;
+        }
+        .visual {
+            display: none;
+        }
+    }
+}
+
+
+// #############################################################################
+// HELPERS
+
+// meta information for listview, detail and the authors plugin
+.aldryn-newsblog-meta {
+    font-size: 14px;
+    line-height: 1.4;
+    padding-bottom: $line-height-computed;
+    border-bottom: 1px solid $gray-light;
+    .meta {
+        padding-top: 2px;
+    }
+    img {
+        width: 38px;
+        height: 38px;
+    }
+    p {
+        margin: 0;
+    }
+    img {
+        border-radius: $border-radius-base;
+        margin: 2px 10px 0 0;
+    }
+    .image {
+        @extend .pull-left;
+    }
+}
+
+// custom title for right navigation
+.aldryn-newsblog-sidebar {
+    h3 {
+        @extend .text-uppercase;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $brand-primary;
+    }
+    .aldryn-newsblog {
+        margin-bottom: 0;
+    }
+}
+
+// pagination alteration
+.aldryn-newsblog-pagination {
+    text-align: center;
+}
+.aldryn-newsblog-pager {
+    position: relative;
+    font-size: $font-size-small;
+    line-height: 1.4;
+    padding: $line-height-computed / 2 0;
+    border-top: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-light;
+    a span {
+        color: $text-color;
+    }
+    div {
+        display: inline-block !important;
+    }
+    .pager {
+        margin: 0;
+    }
+    .pager-back {
+        text-align: center;
+    }
+    .next > a, .next > span, .previous > a, .previous > span {
+        min-width: 25%;
+        text-align: left;
+    }
+    .next > a, .next > span {
+        text-align: right;
+    }
+}
+// additional plugin for addthis
+.addthis_sharing_toolbox > div {
+    text-align: center;
+}
+
+// #############################################################################
+// DETAIL
+.aldryn-newsblog-detail {
+    // tags on detail view
+    .tags {
+        margin-bottom: $line-height-computed;
+        a {
+            @extend .label;
+            @extend .label-default;
+        }
+    }
+    // meta
+    .aldryn-newsblog-meta {
+        padding-bottom: $line-height-computed / 2;
+        margin-bottom: $line-height-computed / 2;
+    }
+    // general content
+    article {
+        h2 {
+            margin: $line-height-computed / 2 0 $line-height-computed;
+        }
+        .lead {
+            font-size: 140%;
+        }
+    }
+}
+
+
+// #############################################################################
+// PLUGINS
+.aldryn-newsblog-categories,
+.aldryn-newsblog-authors,
+.aldryn-newsblog-tags,
+.aldryn-newsblog-recommended,
+.aldryn-newsblog-article-search {
+    padding-bottom: $line-height-computed / 2;
+    border-bottom: 1px solid $gray-light;
+}
+
+// PLUGIN: categories
+.aldryn-newsblog-categories {
+    ul {
+        margin-bottom: 0;
+    }
+    a {
+        display: block;
+        font-size: 100%;
+        color: $gray-dark;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding-left: $line-height-computed / 2;
+        margin-bottom: $line-height-computed / 4;
+        border-left: 2px solid white;
+    }
+    .active a,
+    a:hover {
+        color: $brand-primary;
+        padding-left: $line-height-computed / 2;
+        border-color: $brand-primary;
+    }
+
+    .badge {
+        float: right;
+        display: none;
+    }
+}
+
+// PLUGIN: authors
+.aldryn-newsblog-authors {
+    li {
+        position: relative;
+    }
+    ul {
+        margin: 0;
+    }
+
+    .aldryn-newsblog-meta {
+        font-size: 13px;
+        min-height: 50px;
+        padding: 0;
+        border-bottom: none;
+    }
+    .meta {
+        padding-top: 1px;
+    }
+    .badge {
+        position: absolute;
+        top: 12px;
+        right: 0;
+    }
+}
+
+// PLUGIN: authors
+.aldryn-newsblog-tags {
+    ul {
+        @extend .list-inline;
+        margin-left: 0;
+    }
+    li {
+        @extend .label;
+        @extend .label-default;
+        transition: background $speed-base;
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 5px 8px;
+        margin: 0 5px 5px 0;
+        &:hover {
+            background: $gray-dark;
+            a, .badge {
+                color: white;
+            }
+        }
+    }
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    .badge {
+        color: white;
+        padding: 0;
+        background: transparent;
+    }
+}
+
+// PLUGIN: recommended
+.aldryn-newsblog-recommended {
+    li:not(:first-child) {
+        margin-top: $line-height-computed / 2;
+    }
+    h3 {
+        font-size: 120%;
+        font-weight: 300;
+        margin: 0;
+    }
+    p {
+        font-size: 80%;
+    }
+}
+
+// PLUGIN: featured
+.aldryn-newsblog-articles-featured {
+    @include make-row();
+
+    .aldryn-newsblog-featured {
+        @include make-md-column(12);
+        h2 {
+            font-size: $font-size-large;
+        }
+        .lead {
+            font-size: $font-size-base;
+        }
+    }
+    .aldryn-newsblog-featured:first-child {
+        @include make-md-column(24);
+        h2 {
+            font-size: $font-size-h2;
+        }
+        .lead {
+            font-size: 115%;
+        }
+    }
+
+    article.aldryn-newsblog-featured .visual {
+        display: block;
+    }
+}
+
+// PLUGIN: related articles
+.aldryn-newsblog-related {
+    font-size: $font-size-small;
+    line-height: 1.4;
+    h3 {
+        font-size: $font-size-base;
+        margin-top: $line-height-computed / 2;
+        margin-bottom: $line-height-computed / 4;
+    }
+    // add grid
+    ul {
+        @include make-row();
+    }
+    li {
+        @include make-md-column(12);
+    }
+}
+
+// PLUGIN: archive
+.aldryn-newsblog-archive {
+    .panel-heading {
+        color: white;
+        background: $brand-primary;
+        a:hover {
+            color: white;
+        }
+    }
+    .list-group .badge {
+        position: relative;
+        top: 4px;
+    }
+}
+
+// PLUGIN: search
+.aldryn-newsblog-article-search {
+    padding-bottom: $line-height-computed;
+    form {
+        margin-bottom: 0;
+    }
+    button {
+        text-transform: uppercase;
+        padding-left: $line-height-computed;
+        padding-right: $line-height-computed / 2;
+        width: 75px;
+        &:before {
+            @extend .fa;
+            @extend .fa-search;
+            padding-right: 50px;
+        }
+    }
+}
+
+.results-list {
+    font-size: $font-size-small;
+    li {
+        padding-top: $line-height-computed / 2;
+        margin-top: $line-height-computed / 2;
+        border-top: 1px dotted $gray-light;
+        &:first-child {
+            margin-top: 0;
+        }
+        strong {
+            display: block;
+            color: $gray-dark;
+            font-size: $font-size-small;
+            margin: 0;
+        }
+    }
+    h3 {
+        @extend .h3;
+        font-size: $font-size-base;
+        margin-bottom: 0;
+        text-transform: none;
+        border-bottom: none;
+    }
+    .text-muted {
+        color: $gray;
+    }
+}
+
+// PLUGIN: latest article
+.aldryn-newsblog-articles {
+    @include make-row();
+    article {
+        @include make-md-column(8);
+
+        h2 {
+            @extend .h4;
+        }
+        .visual {
+            display: block;
+        }
+        .lead {
+            font-size: $font-size-base;
+            line-height: 1.4;
+        }
+    }
+}

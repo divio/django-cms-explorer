@@ -1,0 +1,73 @@
+// #############################################################################
+// JOBS
+
+// adds styles for /jobs/
+
+// custom title for right navigation
+.aldryn-jobs-sidebar {
+    h3 {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.4;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $brand-primary;
+    }
+}
+
+.aldryn-jobs-list .aldryn-jobs-article {
+    .lead {
+        font-size: $font-size-base;
+    }
+    hr {
+        display: none;
+    }
+    .aldryn-jobs-meta {
+        margin: 0 0 $line-height-computed / 2;
+    }
+    margin-bottom: $line-height-computed;
+    border-bottom: 1px solid $gray-light;
+}
+
+.aldryn-jobs-detail .aldryn-jobs-article {
+    hr {
+        margin: $line-height-computed / 2 0;
+    }
+    h3 {
+        font-size: $font-size-h2;
+    }
+}
+
+.aldryn-jobs-form {
+    margin-top: $line-height-computed;
+}
+
+.aldryn-jobs-pager {
+    position: relative;
+    font-size: $font-size-small;
+    line-height: 1.4;
+    padding: $line-height-computed / 2 0;
+    margin: $line-height-computed 0;
+    border-top: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-light;
+    a span {
+        color: $text-color;
+    }
+    div {
+        display: inline-block !important;
+    }
+    .pager {
+        margin: 0;
+    }
+    .pager-back {
+        text-align: center;
+    }
+    .next > a, .next > span, .previous > a, .previous > span {
+        min-width: 25%;
+        text-align: left;
+    }
+    .next > a, .next > span {
+        text-align: right;
+    }
+}

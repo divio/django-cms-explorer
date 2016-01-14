@@ -1,0 +1,44 @@
+// #############################################################################
+// ACCORDION
+
+// the default bootstrap panel and collapsable allow for an accordion-like behavior
+// the additional accordion class controls the styling for that component
+
+.accordion {
+    border-bottom: 1px solid $gray-light;
+    .panel {
+        box-shadow: none;
+        margin: 0;
+        border: none;
+    }
+    .panel-default {
+        margin-top: 0;
+    }
+    .panel-heading {
+        padding: 0;
+        border: none;
+        border-top: 1px solid $gray-light;
+        h4 a {
+            @extend .fa;
+            @extend .fa-angle-up;
+            display: block;
+            font-weight: 300;
+            color: $brand-primary;
+            padding: $panel-heading-padding;
+            &:hover {
+                color: $link-hover-color;
+            }
+            &:before {
+                transition: rotate $speed-base;
+                float: right;
+            }
+            &.collapsed:before {
+                @extend .fa-rotate-180;
+            }
+        }
+        .panel-title > a {
+            padding-top: $line-height-computed / 1.5;
+            padding-bottom: $line-height-computed / 1.5;
+        }
+    }
+}

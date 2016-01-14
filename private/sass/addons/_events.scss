@@ -1,0 +1,262 @@
+// #############################################################################
+// EVENTS
+
+// adds events style for /events/
+
+$events-visual-size: 240px;
+
+.aldryn-events {
+    margin-bottom: $line-height-computed;
+}
+
+// list view
+.aldryn-events-list {
+    article {
+        @extend .panel;
+        @extend .panel-default;
+        position: relative;
+        min-height: ($events-visual-size + $line-height-computed) * 3 / 4;
+        padding-left: $events-visual-size + $line-height-computed * 1.5;
+        padding-right: $line-height-computed  / 1.5;
+        h2 {
+            font-size: $font-size-large;
+        }
+    }
+
+    > h2 {
+        position: relative;
+        margin: $line-height-computed / 1.5 0 $line-height-computed * 1.5;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: $brand-primary;
+        }
+    }
+
+    .visual {
+        position: absolute;
+        left: $line-height-computed / 1.5;
+        top: $line-height-computed / 1.5;
+        img {
+            width: $events-visual-size;
+            height: auto;
+        }
+    }
+
+    .lead {
+        font-size: $font-size-base;
+    }
+}
+
+// detail view
+.register-link,
+.detail-link {
+    margin-bottom: $line-height-computed / 4;
+    a:before {
+        @extend .fa;
+        @extend .fa-fw;
+        @extend .fa-left;
+        @extend .fa-external-link;
+    }
+}
+.register-link {
+    float: right;
+}
+
+
+// #############################################################################
+// HELPERS
+
+// meta information for listview and detail
+.aldryn-events-meta {
+    @include clearfix();
+    .date,
+    .location {
+        float: left;
+        padding-right: $line-height-computed;
+        margin-bottom: 0;
+        word-break: break-all;
+        a:before {
+            @extend .fa;
+            @extend .fa-fw;
+        }
+    }
+    .date {
+        margin-bottom: $line-height-computed / 2;
+    }
+    .date a {
+        @extend .fa-calendar;
+        &:before {
+            color: $text-color;
+        }
+    }
+    .location a {
+        @extend .fa-map-marker;
+        &:before {
+            color: $text-color;
+        }
+    }
+}
+
+// styles the "add to calendar" button from addthisevent
+.aldryn {
+    // INFO: implementation from https://addthisevent.com/button/
+    .addthisevent-drop {
+        display: inline;
+        color: $link-color !important;
+        font-family: inherit;
+        font-weight: 300;
+        font-size: inherit;
+        text-shadow: none;
+        text-decoration: inherit;
+        padding: 0;
+        border: none;
+        background: none;
+        &:hover {
+            color: $link-hover-color !important;
+            font-size: $font-size-base;
+            text-decoration: $link-hover-decoration;
+            border: none;
+            background: none;
+        }
+        .addthisevent_icon {
+            display: none;
+        }
+    }
+}
+
+// pagination alteration
+.aldryn-events-pagination {
+    text-align: center;
+}
+.aldryn-events-pager {
+    position: relative;
+    font-size: $font-size-small;
+    line-height: 1.4;
+    padding: $line-height-computed / 2 0;
+    border-top: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-light;
+    a span {
+        color: $text-color;
+    }
+    div {
+        display: inline-block !important;
+    }
+    .pager {
+        margin: 0;
+    }
+    .pager-back {
+        text-align: center;
+    }
+    .next > a, .next > span, .previous > a, .previous > span {
+        min-width: 25%;
+        text-align: left;
+    }
+    .next > a, .next > span {
+        text-align: right;
+    }
+}
+// additional plugin for addthis
+.addthis_sharing_toolbox > div {
+    text-align: center;
+}
+
+// custom title for right navigation
+.aldryn-events-sidebar {
+    h3 {
+        @extend .text-uppercase;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $brand-primary;
+    }
+}
+
+
+// #############################################################################
+// CALENDAR
+
+.aldryn-events-calendar {
+    h3 {
+        @extend .text-center;
+        margin-top: 0;
+    }
+    .controls {
+        text-align: center;
+        a:first-child,
+        a:last-child {
+            position: relative;
+            top: -2px;
+            font-size: 30px;
+            line-height: 25px;
+            width: 20px;
+            height: 25px;
+            overflow: hidden;
+            &:before {
+                @extend .fa;
+            }
+        }
+        a:first-child:before {
+            @extend .fa-angle-left;
+        }
+        a:last-child:before {
+            @extend .fa-angle-right;
+        }
+    }
+
+    // table styles
+    td,
+    th {
+        text-align: center;
+    }
+    th {
+        background: $gray-lighter;
+    }
+    // table states
+    td.weekend {
+        background: lighten($gray-lighter, 3%);
+    }
+    td.today {
+        color: white;
+        background: $brand-primary;
+        a {
+            color: white;
+        }
+    }
+    td.events {
+        border: 1px solid $brand-primary;
+    }
+}
+
+// #############################################################################
+// REGISTRATION
+
+.aldryn-events-registration {
+    margin-top: $line-height-computed * 2;
+}
+
+// #############################################################################
+// PLUGINS
+
+.aldryn-events-upcoming,
+.aldryn-events-listplugin {
+    li {
+        border-bottom: 1px solid $gray-light;
+        padding-bottom: $line-height-computed / 2;
+        margin-bottom: $line-height-computed / 2;
+    }
+    a {
+        display: block;
+    }
+    span {
+        color: $gray-dark;
+        font-size: 90%;
+    }
+}

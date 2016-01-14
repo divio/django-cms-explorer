@@ -1,0 +1,6 @@
+.idea/
+*.pyc
+data/
+env/
+node_modules/
+tests/coverage/

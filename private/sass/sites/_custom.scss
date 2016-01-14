@@ -1,0 +1,162 @@
+// #############################################################################
+// CUSTOM
+
+// this file is the starting point for custom style and structure
+// feel free to organise your code here as you wish
+// keep in mind that you can use deeper folder nesting for more structure and refinement
+
+// HELPERS/spacer
+.spacer {
+    margin-top: $line-height-computed;
+    margin-bottom: $line-height-computed;
+}
+.spacer-xs {
+    margin-top: $line-height-computed / 2;
+    margin-bottom: $line-height-computed / 2;
+}
+.spacer-sm {
+    margin-top: $line-height-computed / 1.5;
+    margin-bottom: $line-height-computed / 1.5;
+}
+.spacer-md {
+    @extend .spacer;
+}
+.spacer-lg {
+    margin-top: $line-height-computed * 2;
+    margin-bottom: $line-height-computed * 2;
+}
+.spacer-zero {
+    margin: 0;
+}
+.spacer:after,
+.spacer-xs:after,
+.spacer-sm:after,
+.spacer-md:after,
+.spacer-lg:after,
+.spacer-zero:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+// HELPERS/accessibility
+.skip-links {
+    @extend .list-unstyled;
+    position: absolute;
+    top: $navbar-height;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    a {
+        @extend .sr-only;
+        @extend .sr-only-focusable;
+    }
+}
+
+// HELPERS/colors
+@include bg-variant(".brand-primary", $brand-primary);
+@include bg-variant(".brand-secondary", $brand-secondary);
+@include bg-variant(".brand-success", $brand-success);
+@include bg-variant(".brand-info", $brand-info);
+@include bg-variant(".brand-warning", $brand-warning);
+@include bg-variant(".brand-danger", $brand-danger);
+@include bg-variant(".brand-muted", $text-muted);
+
+@include bg-variant(".brand-gray-darker", $gray-darker);
+@include bg-variant(".brand-gray-dark", $gray-dark);
+@include bg-variant(".brand-gray", $gray);
+@include bg-variant(".brand-gray-light", $gray-light);
+@include bg-variant(".brand-gray-lighter", $gray-lighter);
+
+// HELPERS/styleguide
+.styleguide {
+    padding: $line-height-computed 0;
+}
+.col-linebreak {
+    border-left: 1px dotted $gray-light;
+}
+
+// #############################################################################
+// TYPOGRAPHY
+body,
+.lead {
+    font-weight: 100;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    color: $text-color;
+    font-weight: 600;
+}
+
+// mobile only
+@media (max-width: $screen-xs-max) {
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+}
+
+a {
+    transition: color $speed-base;
+}
+
+dl.dl-horizontal {
+    dt {
+        text-align: left;
+    }
+}
+
+// #############################################################################
+// BOOTSTRAP
+.breadcrumb,
+.navbar-breadcrumb {
+    min-height: 0;
+    margin-bottom: 0;
+}
+.breadcrumb {
+    margin-bottom: $line-height-computed / 2;
+}
+.breadcrumb > li + li:before {
+    @extend .fa;
+    content: "\f061" !important; // required to overwrite bootstrap default
+}
+
+.dropdown-menu,
+.alert {
+    font-size: $font-size-small;
+    line-height: 1.4;
+}
+.badge {
+    font-size: $font-size-small - 2;
+}
+
+// FIXME - HACKS that need to be implemented
+.cms-blueprint {
+    z-index: 9999 !important;
+}
+
+// #############################################################################
+// django CMS
+.filer_image.left {
+    @extend .pull-left;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+.filer_image.right {
+    @extend .pull-right;
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
+}
+.filer_image {
+    max-width: 100%;
+}

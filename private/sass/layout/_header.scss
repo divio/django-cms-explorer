@@ -1,0 +1,201 @@
+// #############################################################################
+// HEADER
+
+// all styles related to the global header should be declared within this file
+// apply the "sites/" nesting described within the documentation if the file
+// is getting to large
+
+.navbar-head {
+    transition: all $speed-base;
+    font-size: $font-size-small;
+    line-height: 1.4;
+    // #LOGO#
+    .navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        a {
+            @include hide-content();
+            display: block;
+            width: 210px;
+            height: $navbar-height;
+            background: no-repeat left center;
+            // INFO: uses img-retina mixin from bootstrap
+            @include img-retina("../img/logo-main.png", "../img/logo-main@2x.png", 210px, $navbar-height);
+        }
+    }
+    // #DROPDOWN#
+    .dropdown-menu {
+        border: none;
+        background: $navbar-inverse-bg;
+        li a {
+            color: $navbar-inverse-color;
+            font-weight: 300;
+            text-align:right;
+            &:hover, &:active, &:focus {
+                background: darken($navbar-inverse-bg, 10%);
+            }
+        }
+    }
+
+    // custom navbar for mobile
+    @media (max-width: $screen-xs-max) {
+        &.navbar-inverse{
+            background: rgba(0, 0, 0, 0.8);
+            .navbar-collapse {
+                background: none;
+            }
+            ul {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            nav > ul > li {
+                border-bottom: 1px solid darken($navbar-inverse-bg, 7%);
+                &.divider {
+                    border-bottom: none;
+                }
+            }
+            .dropdown-menu {
+                border-top: 1px solid darken($navbar-inverse-bg, 7%);
+                a {
+                    text-align: left;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}
+// small version
+.navbar-head-narrow {
+    min-height: 50px;
+    background: rgba(#131429, 0.6);
+    .navbar-brand, .navbar-brand a {
+        height: 50px;
+    }
+    .nav .navbar-nav > li > a {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+    .navbar-toggle {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+}
+
+// INFO: we need to modify the navbar behaviour as we want some borders
+.navbar {
+    .nav > li > a > span {
+        padding-bottom: 5px;
+        border-bottom: 2px solid transparent;
+    }
+    .nav > .active > a > span,
+    .nav > li:hover > a > span {
+        border-color: $brand-primary;
+    }
+    // mobile only
+    @media (max-width: $screen-xs-max) {
+        .navbar-collapse {
+            background: darken($navbar-inverse-bg, 20%);
+        }
+    }
+}
+
+// #############################################################################
+// FEATURE
+.feature-visual, .feature-visual-narrow {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+    margin-bottom: $line-height-computed;
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        // we need to autostretch the element according to its limit bounds
+        // to mimic a background cover behaviour
+        width: 100%;
+        height: auto;
+        min-height: 280px;
+        min-width: 1150px;
+    }
+}
+.feature-visual-narrow {
+    height: 90px;
+}
+// exception for home
+.tpl-home {
+    .feature-visual {
+        height: 480px;
+        img {
+            min-height: 480px;
+        }
+        // mobilel only
+        @media (max-width: $screen-xs-max) {
+            height: 380px;
+        }
+    }
+}
+
+.feature-content {
+    position: absolute;
+    left: 0;
+    top: $navbar-height;
+    z-index: 10;
+    width: 100%;
+    color: $navbar-inverse-color;
+    h1,
+    h2,
+    h3 {
+        color: $navbar-inverse-color;
+    }
+    // mobilel only
+    @media (max-width: $screen-xs-max) {
+        text-align: center;
+        padding-top: 25px;
+        .spacer {
+            display: none;
+        }
+    }
+}
+
+// #############################################################################
+// TOGGLE
+.navbar-toggle {
+    .icon-bar {
+        transition: all $speed-base ease-in-out;
+    }
+    .icon-bar:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+    .icon-bar:nth-child(2) {
+        background-color: transparent;
+    }
+    .icon-bar:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+}
+
+.navbar-toggle.collapsed {
+    .icon-bar:nth-child(1) {
+        transform: none;
+    }
+    .icon-bar:nth-child(2) {
+        background-color: $navbar-inverse-toggle-icon-bar-bg;
+    }
+    .icon-bar:nth-child(3) {
+        transform: none;
+    }
+}
+
+// toolbar smooth animation
+.cms-toolbar-expanded body,
+.cms-toolbar-expanded .feature-content,
+.cms-toolbar-expanded .navbar-head {
+    margin-top: 50px;
+}
+body,
+.navbar-head {
+    transition: margin-top, $speed-base;
+}

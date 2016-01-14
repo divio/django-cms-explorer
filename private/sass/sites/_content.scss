@@ -1,0 +1,142 @@
+// #############################################################################
+// CONTENT
+
+$section-gray: #3c3740;
+$section-cyan: #3aa9a5;
+$section-violet: #61285b;
+
+.section-gray,
+.section-cyan,
+.section-violet {
+    position: relative;
+    z-index: 10;
+    font-size: $font-size-small;
+    line-height: 1.4;
+    color: white;
+    padding: $line-height-computed * 2 0;
+    background: $section-gray;
+    // mobile only
+    @media (max-width: $screen-xs-max) {
+        margin-left: -10px;
+        margin-right: -10px;
+        padding: 10px;
+    }
+    // tablet and up
+    @media (min-width: $screen-sm-min) {
+        &:before {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -9999px;
+            right: 0;
+            border-left: 9999px solid $section-gray;
+            box-shadow: 9999px 0 0 $section-gray;
+            z-index: -1;
+        }
+    }
+    // additional styling
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: white;
+    }
+    a {
+        color: white;
+    }
+    img {
+        height: auto;
+    }
+    dl dt {
+        font-weight: 300;
+        padding: 10px;
+        margin: 0;
+        // mobilel only
+        @media (max-width: $screen-xs-max) {
+            padding: 10px 0 0;
+        }
+    }
+    dl dd {
+        padding: 10px 0 0 $component-offset-horizontal;
+        margin: 0;
+        border-bottom: 1px solid white;
+        // mobilel only
+        @media (max-width: $screen-xs-max) {
+            padding: 0 0 10px;
+        }
+    }
+
+    // form elements
+    .aldryn-forms label {
+        @extend .sr-only;
+    }
+}
+.section-gray {
+    .aldryn-forms button {
+        color: white;
+        background: $section-gray;
+        &:hover {
+            border-color: $brand-primary;
+            background: $brand-primary;
+        }
+    }
+}
+.section-violet {
+    background: $section-violet;
+    &:before {
+        border-left: 9999px solid $section-violet;
+        box-shadow: 9999px 0 0 $section-violet;
+    }
+}
+.section-cyan {
+    background: $section-cyan;
+    &:before {
+        border-left: 9999px solid $section-cyan;
+        box-shadow: 9999px 0 0 $section-cyan;
+    }
+}
+
+.img-section-fillwidth {
+    display: none;
+    // tablet and up
+    @media (min-width: $screen-sm-min) {
+        display: block;
+        position: absolute;
+        left: -14%;
+        top: 0;
+        // testing
+        max-height: 100%;
+        max-width: 100%;
+        height: 100%;
+        // mobile and small only
+        @media (max-width: $screen-sm-max) {
+            position: static;
+            left: 0;
+        }
+        // tablet only
+        @media (max-width: $screen-md-max) {
+            left: -27%;
+        }
+    }
+}
+
+// #############################################################################
+// ELEMENTS
+.icon-rounded .icon {
+    transition: all $speed-base;
+    color: $brand-primary;
+    font-size: 35px;
+    line-height: 93px;
+    text-align: center;
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+    margin-bottom: 14px;
+    border: 1px solid $brand-primary;
+    &:hover {
+        color: white;
+        background: $brand-primary;
+    }
+}

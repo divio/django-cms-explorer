@@ -1,0 +1,55 @@
+// #############################################################################
+// EVENTS
+
+$carousel-caption-height: 100px;
+$carousel-indicator-size: 12px;
+
+// modyfies core styles for the bootstrap carousel plugin standard style
+.carousel-style-standard {
+    .item {
+        margin-bottom: $carousel-caption-height;
+    }
+    .carousel-indicators {
+        bottom: $carousel-caption-height;
+        li {
+            width: $carousel-indicator-size;
+            height: $carousel-indicator-size;
+        }
+        .active {
+            width: $carousel-indicator-size + 2;
+            height: $carousel-indicator-size + 2;
+        }
+    }
+    .carousel-control {
+        background-image: none;
+        span {
+            margin-top: -15px - $carousel-caption-height / 2;
+        }
+    }
+    .carousel-caption {
+        left: 0;
+        right: 0;
+        bottom: -$carousel-caption-height;
+        padding: $line-height-computed / 2 0;
+        height: $carousel-caption-height;
+        border-bottom: 1px solid $gray-light;
+        background: white;
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $text-color;
+            font-size: $font-size-small;
+            text-align: left;
+            font-weight: 600;
+            margin: 0 0 5px;
+        }
+        p {
+            font-weight: 300;
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,96 @@
+// #############################################################################
+// FOOTER
+
+// all styles related to the global footer should be declared within this file
+// apply the "sites/" nesting described within the documentation if the file is
+// getting to large
+
+$footer-bg-primary: #211b26;
+$footer-bg-secondary: #0b090d;
+$footer-height: 117px;
+
+.footer {
+    color: white;
+    width: 100%;
+    background: $footer-bg-secondary;
+    p {
+        margin: 0;
+        // tablet and up
+        @media (min-width: $screen-sm-max) {
+            padding-right: 100px;
+        }
+    }
+
+    // mobile navigation
+    .list-inline {
+        // tablet and up
+        @media (min-width: $screen-sm-max) {
+            margin-bottom: 0;
+            li {
+                padding: 0 10px 0 0;
+            }
+            .pull-right {
+                position: relative;
+                top: 20px;
+            }
+        }
+    }
+}
+
+// left positioned logo
+.footer-logo {
+    // tablet and up
+    @media (min-width: $screen-sm-max) {
+        float: left;
+        padding-right: 100px;
+    }
+    img {
+        width: 190px;
+        // tablet and lower
+        @media (max-width: $screen-sm-max) {
+            padding-bottom: 15px;
+        }
+    }
+}
+
+// upper footer
+.footer-copyright {
+    font-size: 14px;
+    background: $footer-bg-primary;
+    // inner element
+    .container {
+        padding-top: $grid-gutter-width;
+        padding-bottom: $grid-gutter-width;
+    }
+}
+
+// lower footer
+.footer-theme {
+    font-size: 12px;
+    background: $footer-bg-secondary;
+    .container {
+        padding-top: $grid-gutter-width / 2;
+        padding-bottom: $grid-gutter-width / 2;
+    }
+}
+
+// #############################################################################
+// STICKY
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+// tablet and up
+@media (min-width: $screen-sm-max) {
+    body {
+        /* Margin bottom by footer height */
+        margin-bottom: $footer-height;
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: $footer-height;
+    }
+}

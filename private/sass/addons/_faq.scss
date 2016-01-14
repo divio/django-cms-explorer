@@ -1,0 +1,60 @@
+// #############################################################################
+// FAQ
+
+// adds styles for /faq/
+
+// custom title for right navigation
+.aldryn-faq-sidebar {
+    h3 {
+        @extend .text-uppercase;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $brand-primary;
+    }
+}
+
+.aldryn-faq {
+    margin: 0 0 $line-height-computed;
+
+    .list-group-item-heading {
+        font-size: $font-size-base;
+        margin: 0 0 $line-height-computed / 4;
+    }
+    .list-group-item-text p {
+        margin: 0;
+    }
+    .content {
+        margin: 0 0 $line-height-computed;
+    }
+}
+
+.aldryn-faq-pager {
+    position: relative;
+    font-size: $font-size-small;
+    line-height: 1.4;
+    padding: $line-height-computed / 2 0;
+    border-top: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-light;
+    a span {
+        color: $text-color;
+    }
+    div {
+        display: inline-block !important;
+    }
+    .pager {
+        margin: 0;
+    }
+    .pager-back {
+        text-align: center;
+    }
+    .next > a, .next > span, .previous > a, .previous > span {
+        min-width: 25%;
+        text-align: left;
+    }
+    .next > a, .next > span {
+        text-align: right;
+    }
+}
