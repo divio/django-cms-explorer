@@ -8,7 +8,7 @@
 // CKEDITOR
 /**
  * Default CKEDITOR Styles
- * Added within src/settings.py CKEDITOR_SETTINGS.stylesSet
+ * Added within settings.py CKEDITOR_SETTINGS.stylesSet
  *
  * @module CKEDITOR
  */
