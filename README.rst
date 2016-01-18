@@ -10,9 +10,9 @@ This is the "Explorer" theme used for the `django CMS demo <http://demo.django-c
 The purpose of this project is to provide theme developers a cookie cutter theme
 project to create or migrate their own theme.
 
-We also created `django-cms-demo <https://github.com/divio/django-cms-demo>`_
-which makes life easier for developers to play around with a theme. You can also use
-`Aldryn <http://www.aldryn.com>`_ to skip the local setup all together.
+We created `django-cms-demo <https://github.com/divio/django-cms-demo>`_ in addition
+to make life easier for developers for playing around with a theme. You can also use
+`Aldryn Cloud <http://www.aldryn.com>`_ to skip the local setup all together.
 
 .. image:: https://raw.githubusercontent.com/divio/django-cms-explorer/master/static/img/visuals/explorer-preview.png
 
