@@ -24,9 +24,9 @@ Installation
 Demo Project
 ------------
 
-The easiest way to install and test this project is the
+The easiest way to install this project is the
 `django-cms-demo <https://github.com/divio/django-cms-demo>`_ project.
-Head over to the repository and follow the instructions within the
+Head over to the repository and follow the instructions in the
 ``README.txt``.
 
 Manual
@@ -37,15 +37,15 @@ The easiest way to install django CMS manually is by using the
 
 You can also create a project from scratch following the very helpful Django
 `tutorial <https://docs.djangoproject.com/en/1.9/intro/tutorial01/>`_.
-And then installing django CMS `the "hard" way
+Followed by installing django CMS `the "hard" way
 <http://docs.django-cms.org/en/develop/how_to/install.html>`_.
 
-Once you have created a project, copy all ``static/`` files from within the
+Once you have created a project, copy all ``static/`` files from inside the
 django-cms-explorer project into your projects ``mysite/static/`` folder.
 
 Next do the same with ``private/`` and ``templates/``. All pre-existing
 files can be removed and replaced. More about the file structure is documented
 in our `boilerplate guidelines <https://aldryn-boilerplate-bootstrap3.readthedocs.org/en/latest/structure/index.html>`_.
 
-Restart your server and open your site using ``http://localhost:8000/en/`` and
-you are ready to go.
+Restart your server and open your site using ``http://localhost:8000/en/``.
+You are ready to create your own theme.
