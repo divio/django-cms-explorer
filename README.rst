@@ -7,14 +7,14 @@ django CMS explorer
    :alt: Try demo with Aldryn Cloud
 
 This is the "Explorer" theme used for the `django CMS demo <http://demo.django-cms.org/>`_.
-The purpose of this project is to give theme developers a cookie cutter theme
+The purpose of this project is to provide theme developers a cookie cutter theme
 project to create or migrate their own theme.
-
-.. image:: https://raw.githubusercontent.com/divio/django-cms-explorer/master/static/img/visuals/explorer-preview.png
 
 We also created `django-cms-demo <https://github.com/divio/django-cms-demo>`_
 which makes life easier for developers to play around with a theme. You can also use
 `Aldryn <http://www.aldryn.com>`_ to skip the local setup all together.
+
+.. image:: https://raw.githubusercontent.com/divio/django-cms-explorer/master/static/img/visuals/explorer-preview.png
 
 
 ************
