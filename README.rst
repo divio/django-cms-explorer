@@ -42,7 +42,7 @@ Manual
 #. Choose a starting installation from above.
 #. Once you have created a project, copy all ``static/`` files from inside the
    django-cms-explorer project into your projects ``mysite/static/`` folder.
-#. Next do the same with ``private/`` and ``templates/``. All pre-existing
+#. Next do the same with ``private/``, ``tools/`` and ``templates/``. All pre-existing
    files can be removed and replaced. More about the file structure is documented
    in our `boilerplate guidelines <https://aldryn-boilerplate-bootstrap3.readthedocs.org/en/latest/structure/index.html>`_.
 #. Restart your server and open your site using ``http://localhost:8000/en/``.
