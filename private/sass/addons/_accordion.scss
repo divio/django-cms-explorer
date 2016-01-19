@@ -19,7 +19,6 @@
         border: none;
         border-top: 1px solid $gray-light;
         h4 a {
-            @extend .fa;
             @extend .fa-angle-up;
             display: block;
             font-weight: 300;
@@ -29,6 +28,7 @@
                 color: $link-hover-color;
             }
             &:before {
+                @extend .fa;
                 transition: rotate $speed-base;
                 float: right;
             }
