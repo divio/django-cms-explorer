@@ -1,0 +1,36 @@
+// #############################################################################
+// DJANGO-CMS
+
+// various django CMS add-on style configuration to get them working properly
+
+// make sure that static positioned items get an offset once the toolbar is
+// expanded. Otherwise the toolbar will overlap the menu
+body,
+.navbar-head {
+    transition: margin-top, $speed-base;
+}
+
+.cms-toolbar-expanded .navbar-head {
+    margin-top: 46px;
+}
+body.cke_editable {
+    padding: 5px 8px;
+}
+
+// #############################################################################
+// django-filer
+.filer_image.left {
+    @extend .pull-left;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+.filer_image.right {
+    @extend .pull-right;
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
+}
+.filer_image {
+    max-width: 100%;
+}

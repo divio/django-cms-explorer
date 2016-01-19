@@ -9,11 +9,11 @@
     transition: all $speed-base;
     font-size: $font-size-small;
     line-height: 1.4;
-    // #LOGO#
+    // logo positioning
     .navbar-brand {
         padding-top: 0;
         padding-bottom: 0;
-        margin-top: 0;
+        margin-top: 3px;
         margin-bottom: 0;
         a {
             @include hide-content();
@@ -25,7 +25,12 @@
             @include img-retina("../img/logo-main.png", "../img/logo-main@2x.png", 210px, $navbar-height);
         }
     }
-    // #DROPDOWN#
+    // general navbar items
+    .navbar-nav a {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    // custom dropdown styling
     .dropdown-menu {
         border: none;
         background: $navbar-inverse-bg;
@@ -84,7 +89,7 @@
 }
 
 // INFO: we need to modify the navbar behaviour as we want some borders
-.navbar {
+.navbar-main {
     .nav > li > a > span {
         padding-bottom: 5px;
         border-bottom: 2px solid transparent;
@@ -187,15 +192,4 @@
     .icon-bar:nth-child(3) {
         transform: none;
     }
-}
-
-// toolbar smooth animation
-.cms-toolbar-expanded body,
-.cms-toolbar-expanded .feature-content,
-.cms-toolbar-expanded .navbar-head {
-    margin-top: 50px;
-}
-body,
-.navbar-head {
-    transition: margin-top, $speed-base;
 }

@@ -115,7 +115,10 @@ dl.dl-horizontal {
 }
 
 // #############################################################################
-// BOOTSTRAP
+// BOOTSTRAP ADAPTIONS
+.navbar-form {
+    padding-top: 3px;
+}
 .breadcrumb,
 .navbar-breadcrumb {
     min-height: 0;
@@ -137,26 +140,6 @@ dl.dl-horizontal {
 .badge {
     font-size: $font-size-small - 2;
 }
-
-// FIXME - HACKS that need to be implemented
-.cms-blueprint {
-    z-index: 9999 !important;
-}
-
-// #############################################################################
-// django CMS
-.filer_image.left {
-    @extend .pull-left;
-    position: relative;
-    top: 5px;
-    margin-right: 10px;
-}
-.filer_image.right {
-    @extend .pull-right;
-    position: relative;
-    top: 5px;
-    margin-left: 10px;
-}
-.filer_image {
-    max-width: 100%;
+.pager a {
+    color: #fff;
 }

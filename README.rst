@@ -48,3 +48,20 @@ Manual
 #. Restart your server and open your site using ``http://localhost:8000/en/``.
 
 You are ready to create your own theme.
+
+
+****************
+Supported Addons
+****************
+
+This theme supports, besides the `core addons
+<http://docs.django-cms.org/en/develop/how_to/install.html#other-plugins>`_, also the following:
+
+- `aldryn-bootstrap3 <https://github.com/aldryn/aldryn-bootstrap3>`_
+- `aldryn-forms <https://github.com/aldryn/aldryn-forms>`_
+- `aldryn-newsblog <https://github.com/aldryn/aldryn-newsblog>`_
+- `aldryn-people <https://github.com/aldryn/aldryn-people>`_
+- `aldryn-events <https://github.com/aldryn/aldryn-events>`_
+- `aldryn-faq <https://github.com/aldryn/aldryn-faq>`_
+- `aldryn-jobs <https://github.com/aldryn/aldryn-jobs>`_
+- `cmsplugin-filer <https://github.com/divio/cmsplugin-filer>`_

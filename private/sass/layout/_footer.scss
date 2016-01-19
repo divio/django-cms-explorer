@@ -31,7 +31,7 @@ $footer-height: 117px;
             }
             .pull-right {
                 position: relative;
-                top: 20px;
+                top: 22px;
             }
         }
     }
@@ -43,6 +43,7 @@ $footer-height: 117px;
     @media (min-width: $screen-sm-max) {
         float: left;
         padding-right: 100px;
+        padding-top: 5px;
     }
     img {
         width: 190px;
