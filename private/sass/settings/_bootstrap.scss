@@ -243,20 +243,20 @@ $cursor-disabled:                not-allowed;
 // Dropdown menu container and contents.
 
 //** Background for the dropdown menu.
-$dropdown-bg:                    #fff;
+$dropdown-bg:                    rgba(#131429, 0.5);
 //** Dropdown menu `border-color`.
-$dropdown-border:                #fff;
+$dropdown-border:                $dropdown-bg;
 //** Dropdown menu `border-color` **for IE8**.
-$dropdown-fallback-border:       #fff;
+$dropdown-fallback-border:       #000;
 //** Divider color for between dropdown items.
-$dropdown-divider-bg:            #e5e5e5;
+$dropdown-divider-bg:            #000;
 
 //** Dropdown link text color.
 $dropdown-link-color:            #fff;
 //** Hover color for dropdown links.
 $dropdown-link-hover-color:      #fff;
 //** Hover background for dropdown links.
-$dropdown-link-hover-bg:         #fff;
+$dropdown-link-hover-bg:         rgba(#131429, 0.6);
 
 //** Active dropdown menu item text color.
 $dropdown-link-active-color:     $component-active-color;
@@ -402,7 +402,7 @@ $navbar-default-toggle-border-color:       #ddd;
 // Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color:                      #fff;
-$navbar-inverse-bg:                         rgba(#131429, 0.5);
+$navbar-inverse-bg:                         $dropdown-bg;
 $navbar-inverse-border:                     none;
 
 // Inverted navbar links
@@ -429,7 +429,7 @@ $navbar-inverse-toggle-border-color:        none;
 // Navs
 
 //= Shared nav styles
-$nav-link-padding:                          20px;
+$nav-link-padding:                          10px;
 $nav-link-hover-bg:                         $gray-lighter;
 
 $nav-disabled-link-color:                   $gray-light;
@@ -476,14 +476,14 @@ $pagination-disabled-border:           #ddd;
 // #############################################################################
 // Pager
 
-$pager-bg:                             transparent;
+$pager-bg:                             $brand-primary;
 $pager-border:                         none;
-$pager-border-radius:                  none;
+$pager-border-radius:                  $border-radius-base;
 
-$pager-hover-bg:                       transparent;
+$pager-hover-bg:                       darken($brand-primary, 5%);
 
-$pager-active-bg:                      transparent;
-$pager-active-color:                   $pagination-active-color;
+$pager-active-bg:                      none;
+$pager-active-color:                   #fff;
 
 $pager-disabled-color:                 $pagination-disabled-color;
 
