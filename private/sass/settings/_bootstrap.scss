@@ -402,7 +402,7 @@ $navbar-default-toggle-border-color:       #ddd;
 // Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color:                      #fff;
-$navbar-inverse-bg:                         $dropdown-bg;
+$navbar-inverse-bg:                         darken($dropdown-bg, 10%);
 $navbar-inverse-border:                     none;
 
 // Inverted navbar links

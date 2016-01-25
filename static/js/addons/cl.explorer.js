@@ -17,6 +17,8 @@ var Cl = window.Cl || {};
 (function ($) {
     'use strict';
 
+    var win = $(window);
+
     Cl.explorer = {
 
         /**
@@ -24,11 +26,17 @@ var Cl = window.Cl || {};
          * @constructor init
          */
         init: function () {
-            this._navigation();
+            // Have to wait till images are loaded.
+            // While not required for explorer theme specifically,
+            // beacuse there is a set height on the "feature" by default
+            // it would avoid problems if a normal image would be used.
+            win.on('load', this._navigation);
         },
 
         /**
-         * Handles navigation size
+         * Handles header size. When you scroll past the "Feature" placeholder
+         * it adds a `navbar-head-narrow` class to the header to slim it down.
+         *
          * @method _navigation
          * @private
          */
@@ -37,8 +45,8 @@ var Cl = window.Cl || {};
             var bound = $('.js-feature-wrapper').height() - header.height();
             var narrowClass = 'navbar-head-narrow';
 
-            $(window).on('scroll.explorer', function () {
-                if ($(window).scrollTop() >= bound) {
+            win.on('scroll.explorer resize.explorer', function () {
+                if (win.scrollTop() >= bound) {
                     header.addClass(narrowClass);
                 } else {
                     header.removeClass(narrowClass);

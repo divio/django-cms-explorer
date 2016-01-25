@@ -46,7 +46,7 @@
 
     // custom navbar for mobile
     @media (max-width: $screen-xs-max) {
-        &.navbar-inverse{
+        &.navbar-inverse {
             background: rgba(0, 0, 0, 0.8);
             .navbar-collapse {
                 background: none;
@@ -74,7 +74,6 @@
 // small version
 .navbar-head-narrow {
     min-height: 50px;
-    background: rgba(#131429, 0.6);
     .navbar-brand, .navbar-brand a {
         height: 50px;
     }
