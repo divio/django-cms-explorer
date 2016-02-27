@@ -9,6 +9,10 @@ $events-visual-size: 240px;
     margin-bottom: $line-height-computed;
 }
 
+.aldryn-events-detail {
+    padding-top: $line-height-computed;
+}
+
 // list view
 .aldryn-events-list {
     article {
@@ -134,33 +138,7 @@ $events-visual-size: 240px;
 .aldryn-events-pagination {
     text-align: center;
 }
-.aldryn-events-pager {
-    position: relative;
-    font-size: $font-size-small;
-    line-height: 1.4;
-    padding: $line-height-computed / 2 0;
-    border-top: 1px solid $gray-light;
-    border-bottom: 1px solid $gray-light;
-    a span {
-        color: $text-color;
-    }
-    div {
-        display: inline-block !important;
-    }
-    .pager {
-        margin: 0;
-    }
-    .pager-back {
-        text-align: center;
-    }
-    .next > a, .next > span, .previous > a, .previous > span {
-        min-width: 25%;
-        text-align: left;
-    }
-    .next > a, .next > span {
-        text-align: right;
-    }
-}
+
 // additional plugin for addthis
 .addthis_sharing_toolbox > div {
     text-align: center;

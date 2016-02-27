@@ -31,3 +31,16 @@
         margin-top: $line-height-computed / 2;
     }
 }
+
+.aldryn-people-detail {
+    clear: both;
+    overflow: hidden;
+    margin: 0 0 $line-height-computed * 2;
+    .visual {
+        float: left;
+        padding-right: $line-height-computed;
+    }
+    h2 {
+        padding-top: 10px;
+    }
+}
