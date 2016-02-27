@@ -37,3 +37,14 @@
         background: $gray-light;
     }
 }
+
+// add this sharing
+.addthis_sharing_toolbox > div {
+    text-align: center;
+}
+
+// pagers
+.aldryn-jobs-pager,
+.aldryn-faq-pager {
+    margin-bottom: $line-height-computed * 2;
+}

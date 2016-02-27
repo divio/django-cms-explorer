@@ -17,6 +17,8 @@
 }
 
 .aldryn-jobs-list .aldryn-jobs-article {
+    border-bottom: 1px solid $gray-light;
+
     .lead {
         font-size: $font-size-base;
     }
@@ -26,8 +28,10 @@
     .aldryn-jobs-meta {
         margin: 0 0 $line-height-computed / 2;
     }
-    margin-bottom: $line-height-computed;
-    border-bottom: 1px solid $gray-light;
+}
+
+.aldryn-jobs-list {
+    margin-bottom: $line-height-computed * 2;
 }
 
 .aldryn-jobs-detail .aldryn-jobs-article {
@@ -41,4 +45,8 @@
 
 .aldryn-jobs-form {
     margin-top: $line-height-computed;
+}
+
+.aldryn-jobs-detail {
+    margin-bottom: $line-height-computed;
 }

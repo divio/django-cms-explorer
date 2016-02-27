@@ -16,9 +16,11 @@
     }
 }
 
-.aldryn-faq {
-    margin: 0 0 $line-height-computed;
+.aldryn-faq-latest{
+    margin-bottom: $line-height-computed * 2;
+}
 
+.aldryn-faq {
     .list-group-item-heading {
         font-size: $font-size-base;
         margin: 0 0 $line-height-computed / 4;
@@ -30,3 +32,8 @@
         margin: 0 0 $line-height-computed;
     }
 }
+
+.aldryn-faq-detail {
+    margin: $line-height-computed 0 $line-height-computed * 2;
+}
+

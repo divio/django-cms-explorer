@@ -6,7 +6,7 @@
 $events-visual-size: 240px;
 
 .aldryn-events {
-    margin-bottom: $line-height-computed;
+    margin-bottom: $line-height-computed * 2;
 }
 
 .aldryn-events-detail {
@@ -136,11 +136,6 @@ $events-visual-size: 240px;
 
 // pagination alteration
 .aldryn-events-pagination {
-    text-align: center;
-}
-
-// additional plugin for addthis
-.addthis_sharing_toolbox > div {
     text-align: center;
 }
 
