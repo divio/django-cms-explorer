@@ -40,7 +40,7 @@ var Cl = window.Cl || {};
          * @method _navigation
          * @private
          */
-         _navigation: function () {
+        _navigation: function () {
             var header = $('.js-navbar-head');
             var bound = $('.js-feature-wrapper').height() - header.height();
             var narrowClass = 'navbar-head-narrow';
