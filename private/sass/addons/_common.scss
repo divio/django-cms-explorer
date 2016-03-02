@@ -1,0 +1,50 @@
+// #############################################################################
+// COMMON
+
+// commonly used styles accross different addons
+
+.aldryn-faq-pager,
+.aldryn-events-pager,
+.aldryn-newsblog-pager,
+.aldryn-jobs-pager {
+    position: relative;
+    font-size: $font-size-small;
+    line-height: 1.4;
+    padding: $line-height-computed / 2 0;
+    border-top: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-light;
+    div {
+        display: inline-block !important;
+    }
+    .pager {
+        margin: 0;
+    }
+    .pager-back {
+        color: #fff;
+        text-align: center;
+        border: none;
+    }
+    .next > a, .next > span, .previous > a, .previous > span {
+        min-width: 25%;
+        text-align: left;
+    }
+    .next > a, .next > span {
+        text-align: right;
+    }
+    .text-muted {
+        color: $text-color;
+        border: none;
+        background: $gray-light;
+    }
+}
+
+// add this sharing
+.addthis_sharing_toolbox > div {
+    text-align: center;
+}
+
+// pagers
+.aldryn-jobs-pager,
+.aldryn-faq-pager {
+    margin-bottom: $line-height-computed * 2;
+}

@@ -53,9 +53,8 @@
 </header>
 {% endblock header %}
 
-<hr class="sr-only">
-
 <!-- start: content -->
+<hr class="sr-only" />
 <div class="feature-wrapper js-feature-wrapper">
     {% block feature %}
         {% placeholder "feature" or %}
@@ -101,9 +100,8 @@
 {% block extend_base %}
     {% block content %}{% endblock %}
 {% endblock extend_base %}
+<hr class="sr-only" />
 <!-- end: content -->
-
-<hr class="sr-only">
 
 {% block footer %}
 <!-- start: footer -->
