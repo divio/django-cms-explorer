@@ -46,6 +46,9 @@ $events-visual-size: 240px;
         position: absolute;
         left: $line-height-computed / 1.5;
         top: $line-height-computed / 1.5;
+        bottom: $line-height-computed / 1.5;
+        overflow: hidden;
+        margin-bottom: 0;
         img {
             width: $events-visual-size;
             height: auto;
