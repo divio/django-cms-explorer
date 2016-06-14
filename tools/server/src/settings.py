@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = (
     # djangocms_admin_style needs to be before django.contrib.admin!
-    # https://django-cms.readthedocs.org/en/develop/how_to/install.html#configuring-your-project-for-django-cms
+    # http://docs.django-cms.org/en/latest/how_to/install.html#configuring-your-project-for-django-cms
     'djangocms_admin_style',
     # django defaults
     'django.contrib.admin',
