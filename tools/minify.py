@@ -1,14 +1,17 @@
-# </DOCKER_BUILD>
-# minify collected javascript files
-# ---------------------------------
-# RUN python tools/minify.py
-
 """
 Minify collected javascript files
 
 This would ideally be moved into either the frontend building pipeline (gulp
 et al.) or integrated into the building process (collectstatic or another
 management command).
+
+To minify your collected javascript files, add the following command at the
+end of the Dockerfile for your project (after the `</DOCKER_BUILD>` tag):
+
+    # minify collected javascript files
+    # ---------------------------------
+    RUN python tools/minify.py
+
 """
 import os
 import gzip
