@@ -1,4 +1,8 @@
-standardsite-18 (git:develop) ▸ cat tools/minify.py
+# </DOCKER_BUILD>
+# minify collected javascript files
+# ---------------------------------
+# RUN python tools/minify.py
+
 """
 Minify collected javascript files
 
