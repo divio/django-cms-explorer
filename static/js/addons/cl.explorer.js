@@ -52,32 +52,11 @@ var Cl = window.Cl || {};
                     header.removeClass(narrowClass);
                 }
             }).trigger('scroll.explorer');
-        },
-
-        /**
-         * Equalizes height of given elements
-         * @method equalHeight
-         * @param elements {jQuery} jQuery elements
-         */
-        equalHeight: function (elements) {
-            var height = null;
-
-            elements.each(function (index, item) {
-                if ($(item).height() > height) {
-                    height = $(item).height();
-                }
-            });
-
-            // set equal height
-            elements.height(height);
         }
 
     };
 
     // autoload
     Cl.explorer.init();
-    // load equalHeight
-    Cl.explorer.equalHeight($('.tpl-home .aldryn-newsblog-articles article .lead'));
-    Cl.explorer.equalHeight($('.tpl-home .aldryn-newsblog-articles article h2'));
 
 })(jQuery);

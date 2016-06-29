@@ -5,6 +5,12 @@ $section-gray: #3c3740;
 $section-cyan: #3aa9a5;
 $section-violet: #61285b;
 
+// pagespeed optimisations
+body {
+    visibility: visible !important;
+    transition: none;
+}
+
 .section-gray,
 .section-cyan,
 .section-violet {

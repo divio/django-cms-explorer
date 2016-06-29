@@ -19,12 +19,19 @@
     <link rel="apple-touch-icon" href="{% static 'favicon.png' %}">
     <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
     <!--[if IE]><link rel="shortcut icon" href="{% static 'favicon.ico' %}"><![endif]-->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% render_block "css" %}
+    <style>
+        body { visibility: hidden; }
+        @media (max-width: 600px) {
+            body { visibility: visible; }
+            .feature-visual img { width: 100%; }
+            .sr-only, .skip-links, .navbar-collapse { display: none; }
+        }
+    </style>
     <!--[if lt IE 9]>
     <script src="{% static 'js/libs/html5shiv.min.js' %}"></script>
     <script src="{% static 'js/libs/respond.min.js' %}"></script>
     <![endif]-->
+    {% render_block "css" %}
     {% block extrahead %}{% endblock %}
     {{ ALDRYN_SNAKE.render_head }}
 </head>
@@ -33,6 +40,24 @@
 {% cms_toolbar %}
 
 {% block extend_root %}{% endblock %}
+
+{# prevent blocking css for page speed reasons #}
+<noscript id="deferred-styles">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</noscript>
+<script>
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById('deferred-styles');
+        var replacement = document.createElement('div');
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+              webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+    else window.addEventListener('load', loadDeferredStyles);
+</script>
 
 <script src="{% static 'js/libs/jquery.min.js' %}"></script>
 <script src="{% static 'js/libs/bootstrap.min.js' %}"></script>
