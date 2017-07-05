@@ -31,7 +31,7 @@ def minify(staticfiles_path):
                 fh.write(minified)
             if os.path.exists(file + '.gz'):
                 with gzip.open(file + '.gz', 'w') as fh:
-                    fh.write(minified)
+                    fh.write(minified.encode('utf-8'))
 
 
 minify('/app/static_collected')
