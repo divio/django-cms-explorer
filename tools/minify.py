@@ -13,6 +13,7 @@ end of the Dockerfile for your project (after the `</DOCKER_BUILD>` tag):
     RUN python tools/minify.py
 
 """
+
 import os
 import gzip
 
@@ -21,17 +22,18 @@ import rjsmin
 
 def minify(staticfiles_path):
     for root, dirs, files in os.walk(staticfiles_path):
-        for file in files:
-            if not file.endswith('.js'):
+        for filename in files:
+            if not filename.endswith('.js'):
                 continue
-            file = os.path.join(root, file)
-            with open(file, 'r+') as fh:
+            filepath = os.path.join(root, filename)
+            with open(filepath, 'r+') as fh:
                 minified = rjsmin.jsmin(fh.read())
-                fh.truncate(0)
+                fh.seek(0)
                 fh.write(minified)
-            if os.path.exists(file + '.gz'):
-                with gzip.open(file + '.gz', 'w') as fh:
-                    fh.write(minified)
+                fh.truncate()
+            if os.path.exists(filepath + '.gz'):
+                with gzip.open(filepath + '.gz', 'w') as fh:
+                    fh.write(minified.encode('utf-8'))
 
 
 minify('/app/static_collected')
