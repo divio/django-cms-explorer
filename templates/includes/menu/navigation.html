@@ -1,5 +1,5 @@
 {% load i18n menu_tags cache %}
-{# DOCS: http://docs.django-cms.org/en/latest/reference/navigation.html#show-menu #}
+{# DOCS: http://django-cms.readthedocs.org/en/latest/advanced/templatetags.html#show-menu-examples #}
 
 {% for child in children %}
 <li class="child{% if child.ancestor %} ancestor{% endif %}{% if child.selected %} active{% endif %}{% if child.children and dropdown %} children dropdown{% endif %}{% if forloop.first %} first{% endif %}{% if forloop.last %} last{% endif %}">

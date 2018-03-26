@@ -19,19 +19,22 @@
     <link rel="apple-touch-icon" href="{% static 'favicon.png' %}">
     <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
     <!--[if IE]><link rel="shortcut icon" href="{% static 'favicon.ico' %}"><![endif]-->
-    <style>
-        body { visibility: hidden; }
-        @media (max-width: 600px) {
-            body { visibility: visible; }
-            .feature-visual img { width: 100%; }
-            .sr-only, .skip-links, .navbar-collapse { display: none; }
-        }
-    </style>
     <!--[if lt IE 9]>
     <script src="{% static 'js/libs/html5shiv.min.js' %}"></script>
     <script src="{% static 'js/libs/respond.min.js' %}"></script>
     <![endif]-->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% render_block "css" %}
+    {% if request.toolbar and request.toolbar.edit_mode_active %}
+        <style type="text/css">
+            .cms-structure-mode-structure {
+                width: calc(100% - 400px);
+            }
+            .cms-structure-mode-structure .navbar-fixed-top {
+                width: calc(100% - 400px);
+            }
+        </style>
+    {% endif %}
     {% block extrahead %}{% endblock %}
     {{ ALDRYN_SNAKE.render_head }}
 </head>
@@ -40,24 +43,6 @@
 {% cms_toolbar %}
 
 {% block extend_root %}{% endblock %}
-
-{# prevent blocking css for page speed reasons #}
-<noscript id="deferred-styles">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-</noscript>
-<script>
-    var loadDeferredStyles = function() {
-        var addStylesNode = document.getElementById('deferred-styles');
-        var replacement = document.createElement('div');
-        replacement.innerHTML = addStylesNode.textContent;
-        document.body.appendChild(replacement)
-        addStylesNode.parentElement.removeChild(addStylesNode);
-    };
-    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-              webkitRequestAnimationFrame || msRequestAnimationFrame;
-    if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-    else window.addEventListener('load', loadDeferredStyles);
-</script>
 
 <script src="{% static 'js/libs/jquery.min.js' %}"></script>
 <script src="{% static 'js/libs/bootstrap.min.js' %}"></script>
